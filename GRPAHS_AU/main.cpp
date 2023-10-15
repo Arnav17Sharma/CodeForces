@@ -44,7 +44,7 @@ class Graph {
 
 		int hash(int u, int v){
 			return h.hash({u,v});
-		}
+		}w
 		int hash(int u, int v, int k){
 			return h.hash({u,v,k});
 		}
