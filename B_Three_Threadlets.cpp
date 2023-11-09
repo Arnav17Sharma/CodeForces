@@ -17,13 +17,15 @@ typedef map<int,int> mii;
 
 void answertoProb()
 {
-    int t;
+    ll t;
     cin >> t;
     while(t--){
-        int a, b, c, div = 0;
+        ll a, b, c, div = 0;
         cin >> a >> b >> c;
-        int min = a;
-        int sum = a + b + c;
+        ll min = a;
+        if(a==b && b==c){cout << "YES" << endl;}
+        else{
+        ll sum = a + b + c;
         if(a<=b && a<=c){
             min = a;
             if(b%a==0 && c%a==0){div=1;}
@@ -42,7 +44,7 @@ void answertoProb()
         else{
             if(sum%6!=0 && sum%5!=0 && sum%4!=0){cout << "NO" << endl;}
             else{cout << "YES" << endl;}
-        }
+        }}
     }
 }
 
