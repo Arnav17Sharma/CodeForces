@@ -17,7 +17,17 @@ typedef map<int,int> mii;
 
 void answertoProb()
 {
-cout << 0 ^ 1;
+    ll n;
+    cin>>n;
+    ll s = n*(n+1)/2, s2=0;
+    while(n!=1){
+        int v;
+        cin >> v;
+        s2 += v;
+        n--;
+    }
+    cout << s-s2;
+
 }
 
 
