@@ -27,7 +27,6 @@ void answertoProb()
         n--;
     }
     cout << s-s2;
-
 }
 
 
