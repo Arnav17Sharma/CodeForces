@@ -1,49 +1,59 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-vector <int> commonElements (int A[], int B[], int C[], int n1, int n2, int n3)
-        {
-            vector<int> ans;
-            int i=0, j=0, k=0;
-            while(j<n2 && i<n1){
-                if(A[i] < B[j]){
-                    i++;
-                }
-                else if(A[i] > B[j]){
-                    j++;
-                }
-                else{
-                    if(A[i] == C[k]){ans.push_back(A[i]);i++;j++;k++;}
-                    else if(k == n3-1){
-                        i++;
-                        j++;
-                        k = 0;
-                    }
-                    else{k++;}
-                }
+
+bool isPrime(int n){
+    for(int i=2; i<n/2; i++){
+        if(n%i==0){return false;}
+    }return true;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--){
+        int a, b;
+        cin >> a >> b;
+        if(a>=1 && b>=1 && a%b==0){cout << 0 << endl;}
+        // else{
+        //     int sum = a + b;
+        //     if(isPrime(sum)){cout << b-1 << endl;}
+        //     else{
+        //     int max = a>b? a : b;
+        //     int min = INT_MAX;
+        //     int diff;
+        //     int l = sum-1;
+        //     while(l!=0){
+        //         if(sum%l==0){
+        //             int other = sum-l;
+        //             if(other>=l){diff=abs(max-other);}
+        //             else{int diff = abs(max - l);}
+        //             cout << diff << " ";
+        //             if(diff < min){min = diff;}
+        //         }
+        //         l--;
+        //     }
+        //     cout << endl;
+        //     cout << min << endl;}
+        // }
+        else{
+            int sum = a+b;
+            if(isPrime(sum)){cout << b-1 << endl;}
+            else{
+            int a1=a, b1=b, count1=0, count2 = 0;
+            while(a1%b1!=0 && a1>1 && b1>1){
+                a1++;
+                b1--;
+                count1++;
             }
-        return ans;
+            a1=a, b1=b;
+            while(a1%b1!=0 && a1>1 && b1>1){
+                a1--;
+                b1++;
+                count2++;
+            }
+            if(count2>count1){cout << count1 << endl;}
+            else{cout << count2 << endl;}}
         }
-int main ()
-{
-    int t; cin >> t;
-    while (t--)
-    {
-        int n1, n2, n3; 
-        cin >> n1 >> n2 >> n3;
-        int A[n1];
-        int B[n2];
-        int C[n3];
-        
-        for (int i = 0; i < n1; i++) cin >> A[i];
-        for (int i = 0; i < n2; i++) cin >> B[i];
-        for (int i = 0; i < n3; i++) cin >> C[i];
-        
-        vector <int> res = commonElements (A, B, C, n1, n2, n3);
-        if (res.size () == 0) 
-            cout << -1;
-        for (int i = 0; i < res.size (); i++) 
-            cout << res[i] << " "; 
-        cout << endl;
     }
-    return 0;
+	return 0;
 }
