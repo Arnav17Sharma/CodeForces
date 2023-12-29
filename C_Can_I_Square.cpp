@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//Speed
+#define fastio() ios_base::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+
+//Macros
+#define f(i,j) for(int i=0;i<j;i++)
+#define rf(i,j) for(int i=j-1;i>=0;i--)
+#define all(x) x.begin(), x.end()
+
+//Typedef
+typedef long long ll;
+typedef pair<int, int> pi;
+typedef vector<int> vi;
+typedef map<int,int> mii;
+
+void answertoProb()
+{
+    int t;
+    cin >> t;
+    while(t--){
+        ll n, k, s=0;
+        cin >> n;
+        for(int i=0; i<n; i++){
+            cin >> k;
+            s += k;
+        }
+        ll sr = sqrt(s);
+        if(sr*sr == s){cout << "YES" << endl;}
+        else{cout << "NO" << endl;}
+    }
+}
+
+
+int32_t main()
+{
+fastio()
+answertoProb();
+return 0;
+}
