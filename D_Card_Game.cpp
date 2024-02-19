@@ -106,24 +106,24 @@ ll modinv(ll p,ll q){ll ex;ex=M-2;while (ex) {if (ex & 1) {p = (p * q) % M;}q = 
 
 void solve()
 {
-    ll n, c = d = s = f = 0;
+    ll n, C = D = S = H = 0;
     string ch;
     cin >> n;
     char trump;cin >> trump;
     vector<string> v(2*n), wait_t, wait_n;
     for(int i=0; i<2*n; i++){
         cin >> v[i];
-        if(v[i][1]=='C'){c++;}
-        else if(v[i][1]=='D'){d++;}
-        else if(v[i][1]=='H'){h++;}
-        else if(v[i][1]=='S'){s++;}
+        if(v[i][1]=='C'){C++;}
+        else if(v[i][1]=='D'){D++;}
+        else if(v[i][1]=='H'){H++;}
+        else if(v[i][1]=='S'){S++;}
     }
-    if ((a % 2 == 1 && b % 2 == 1) ||
-      (a % 2 == 1 && c % 2 == 1) ||
-      (a % 2 == 1 && d % 2 == 1) ||
-      (b % 2 == 1 && c % 2 == 1) ||
-      (b % 2 == 1 && d % 2 == 1) ||
-      (c % 2 == 1 && d % 2 == 1)) {}
+    if ((C % 2 == 1 && D % 2 == 1) ||
+      (C % 2 == 1 && H % 2 == 1) ||
+      (C % 2 == 1 && S % 2 == 1) ||
+      (D % 2 == 1 && H % 2 == 1) ||
+      (D % 2 == 1 && S % 2 == 1) ||
+      (H % 2 == 1 && S % 2 == 1)) {}
     auto compare_by_second_letter = [](const string& a, const string& b) {
         return a[1] < b[1];
     };

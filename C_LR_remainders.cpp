@@ -108,7 +108,7 @@ void solve()
 {
     ll n, m, l, pro = 1;
     cin >> n >> m;
-    vl v(n), ans;
+    vl v(n), ans;w
     for(int i=0; i<n; i++){cin >> l;v[i] = l; pro *= l;}
     string s;
     cin >> s;
