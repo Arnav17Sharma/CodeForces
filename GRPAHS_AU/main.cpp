@@ -1,5 +1,4 @@
-#include<bits/stdc++.h>
-using namespace std;
+
 //COPY THE BLACKBOX, there is no need to change anything in it.
 //Check the main function at bottom for USAGE
 
@@ -44,7 +43,7 @@ class Graph {
 
 		int hash(int u, int v){
 			return h.hash({u,v});
-		}w
+		}
 		int hash(int u, int v, int k){
 			return h.hash({u,v,k});
 		}
@@ -171,9 +170,4 @@ class BFS {
 };
 //END COPYING HERE
 //********************BLACKBOX END******************
-#include<bits/stdc++.h>
-using namespace std;
 
-int main(){
-  return 0;
-}
