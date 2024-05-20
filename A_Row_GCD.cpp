@@ -106,14 +106,19 @@ ll modinv(ll p,ll q){ll ex;ex=M-2;while (ex) {if (ex & 1) {p = (p * q) % M;}q = 
 
 void solve()
 {
-    ll n, x, h = INT_MIN, ans = -1;
-    cin >> n;
-    x = n-1;
-    while(x>0){
-        if(gcd(x,n)+x > h) {ans = x; h = gcd(x,n)+x;}
-        x--;
+    ll n,m;
+    cin >> n >> m;
+    vl a(n), b(m);
+    for(int i=0;i<n;i++){cin >> a[i];}
+    for(int i=0;i<m;i++){cin >> b[i];}
+    ll j = 0, ans = 0;
+    for(int i=0;i<n;i++){
+        ans = gcd(ans, abs(a[i]-a[0]));
     }
-    cout << ans << endl;
+    for(int i=0;i<m;i++){
+        cout << gcd(ans, a[0]+b[i]) << " ";
+    }
+    cout << endl;
 }
 
 
@@ -125,11 +130,8 @@ freopen("Error.txt","w",stderr);
 #endif
 //Radhe Radhe
 //The comeback is always stronger than the setback
-int t;
-cin>>t;
-while(t--)
-{
+
 solve();
-}
+
 return 0;
 }

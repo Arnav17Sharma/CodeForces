@@ -106,12 +106,16 @@ ll modinv(ll p,ll q){ll ex;ex=M-2;while (ex) {if (ex & 1) {p = (p * q) % M;}q = 
 
 void solve()
 {
-    ll n, x, h = INT_MIN, ans = -1;
-    cin >> n;
-    x = n-1;
-    while(x>0){
-        if(gcd(x,n)+x > h) {ans = x; h = gcd(x,n)+x;}
-        x--;
+    ll n, m, j = 0, ans = 0;
+    cin >> n >> m;
+    string a, b, s = "";
+    cin >> a;
+    cin >> b;
+    for(int i=0; i<m && j<n; i++) {
+        if(b[i] == a[j]) {
+            ans++;
+            j++;
+        }
     }
     cout << ans << endl;
 }
