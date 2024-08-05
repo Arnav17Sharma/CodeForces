@@ -108,6 +108,7 @@ void solve()
 {
     string a, b;
     cin >> a >> b;
+    
     cout << b[0]+a.substr(1,a.length()-1) << " " << a[0]+b.substr(1,b.length()-1) << endl;
 }
 
