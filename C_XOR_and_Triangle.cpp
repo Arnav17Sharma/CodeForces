@@ -1,8 +1,3 @@
-// Author : Arnav Sharma
-// Linkedin: https://www.linkedin.com/in/arnav-sharma-b4a490258/
-// Codeforces: https://codeforces.com/profile/arn4v
-// Codechef: https://www.codechef.com/users/arnav_1702
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -104,30 +99,19 @@ ll moduloMultiplication(ll a,ll b,ll mod){ll res = 0;a %= mod;while (b){if (b & 
 ll powermod(ll x, ll y, ll p){ll res = 1;x = x % p;if (x == 0) return 0;while (y > 0){if (y & 1)res = (res*x) % p;y = y>>1;x = (x*x) % p;}return res;}
 ll modinv(ll p,ll q){ll ex;ex=M-2;while (ex) {if (ex & 1) {p = (p * q) % M;}q = (q * q) % M;ex>>= 1;}return p;}
 
-bool check(ll w, ll h, ll n, ll r) {
-    ll cnt = 0;
-    ll a = (r/w);
-    ll b = (r/h);
-    cnt = a * b;
-    return cnt >= n;
-}
-
-void solve(ll w, ll h, ll n)
-{
-    ll mid;
-    ll l = 0, r = 1;
-    while(check(w, h, n, r) == false)
-        r *= 2;
-    while(l+1 < r) {
-        mid = l + (r-l)/2;
-        if(check(w, h, n, mid))
-            r = mid;
-        else
-            l = mid;
+void solve() {     
+    int x;
+    cin >> x;
+    if (isPowerOfTwo(x) || isPowerOfTwo(x + 1)) {
+        cout << -1 << endl;return;
     }
-    cout << r;
+    int temp = 1;
+    while (temp * 2 < x) {
+        temp *= 2;
+    }
+    int y = temp - 1;       
+    cout << y << "\n";
 }
-
 
 int32_t main()
 {
@@ -137,8 +121,11 @@ int32_t main()
     #endif
     //Radhe Radhe
     //The comeback is always stronger than the setback.
-    ll w, h, n;
-    cin >> w >> h >> n;
-    solve(w, h, n);
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
     return 0;
 }

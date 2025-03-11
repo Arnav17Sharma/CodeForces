@@ -104,28 +104,18 @@ ll moduloMultiplication(ll a,ll b,ll mod){ll res = 0;a %= mod;while (b){if (b & 
 ll powermod(ll x, ll y, ll p){ll res = 1;x = x % p;if (x == 0) return 0;while (y > 0){if (y & 1)res = (res*x) % p;y = y>>1;x = (x*x) % p;}return res;}
 ll modinv(ll p,ll q){ll ex;ex=M-2;while (ex) {if (ex & 1) {p = (p * q) % M;}q = (q * q) % M;ex>>= 1;}return p;}
 
-bool check(ll w, ll h, ll n, ll r) {
-    ll cnt = 0;
-    ll a = (r/w);
-    ll b = (r/h);
-    cnt = a * b;
-    return cnt >= n;
-}
-
-void solve(ll w, ll h, ll n)
+void solve()
 {
-    ll mid;
-    ll l = 0, r = 1;
-    while(check(w, h, n, r) == false)
-        r *= 2;
-    while(l+1 < r) {
-        mid = l + (r-l)/2;
-        if(check(w, h, n, mid))
-            r = mid;
-        else
-            l = mid;
+    int n;
+    cin >> n;
+    int n1 = n;
+    ll cnt = 0;
+    while(n--) {
+        int k;
+        cin >> k;
+        cnt += k;   
     }
-    cout << r;
+    cout << cnt - (n1 - 1) << endl;
 }
 
 
@@ -137,8 +127,11 @@ int32_t main()
     #endif
     //Radhe Radhe
     //The comeback is always stronger than the setback.
-    ll w, h, n;
-    cin >> w >> h >> n;
-    solve(w, h, n);
+    int t;
+    cin>>t;
+    while(t--)
+    {
+    solve();
+    }
     return 0;
 }
